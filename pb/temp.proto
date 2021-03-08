@@ -1,0 +1,20 @@
+syntax = "proto3";
+
+option go_package = "github.com/darcys22/godbledger/proto/transaction";
+
+package transaction;
+
+service Transactor {
+  rpc SendTemp(TempEvent) returns (Void);
+}
+
+message TempEvent {
+    int32 deviceId = 1;
+    int32 eventId = 2;
+
+    float humidity = 3;
+    float tempCel = 4;
+    float heatIdxCel = 5;
+}
+
+message Void {}
